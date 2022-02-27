@@ -1,7 +1,8 @@
 package com.example.flikxster
 import org.json.JSONArray
 
-class Movie(val movieId: Int, val title: String, val poster: String, val overview: String) {
+class Movie(val movieId: Int, val title: String, private val poster: String, val overview: String) {
+    val posterImageUrl = "https://image.tmdb.org/t/p/w342/$poster"
     companion object {
         fun fromJsonArray(movieDataArray: JSONArray): List<Movie> {
             val movies = mutableListOf<Movie>()
